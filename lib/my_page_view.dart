@@ -38,6 +38,10 @@ class _MyPageViewState extends State<MyPageView> {
       ),
       body: Column(
         children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [SizedBox(), Text("Skip")],
+          ),
           Expanded(
               child: PageView(
             physics: NeverScrollableScrollPhysics(),
@@ -47,6 +51,35 @@ class _MyPageViewState extends State<MyPageView> {
             controller: controller,
             children: screens,
           )),
+          SizedBox(
+            height: 10,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                height: 10,
+                color: currentPageIndex == 0 ? Colors.blueAccent : Colors.pink,
+                width: currentPageIndex == 0 ? 20 : 10,
+              ),
+              SizedBox(
+                width: 5,
+              ),
+              Container(
+                height: 10,
+                color: currentPageIndex == 1 ? Colors.blueAccent : Colors.pink,
+                width: currentPageIndex == 1 ? 20 : 10,
+              ),
+              SizedBox(
+                width: 5,
+              ),
+              Container(
+                height: 10,
+                color: currentPageIndex == 2 ? Colors.blueAccent : Colors.pink,
+                width: currentPageIndex == 2 ? 20 : 10,
+              )
+            ],
+          ),
           TextButton(
               onPressed: () {
                 setState(() {
